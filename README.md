@@ -10,8 +10,8 @@
 Se consideró el uso del token sin expiración, para generar eid, y por medio de éste elemento se hacen las consultas de kilometraje. Se pueden ver los endpoints en swagger mediante la ruta http://localhost:3000/api.
 
 Acorde a documentación, 
-- loggueo: https://hst-api.wialon.com/wialon/ajax.html?svc=token/login&params={"token": TOKEN}
-- consulta de kilometraje, mediante flag 8193. Ejemplo de ruta según documentación: https://hst-api.wialon.com/wialon/ajax.html?svc=core/search_items&params={"spec":{"itemsType":"avl_unit","propName":"sys_name","propValueMask":"Buick Skylark Convertible","sortType":"sys_name"},"force":1,"flags":8193,"from":0,"to":0}&sid=EID_OBTENIDO_TRAS_LOGGUEO
+- loggueo: ```https://hst-api.wialon.com/wialon/ajax.html?svc=token/login&params={"token": TOKEN}``` 
+- consulta de kilometraje, mediante flag 8193. Ejemplo de ruta según documentación: ``` https://hst-api.wialon.com/wialon/ajax.html?svc=core/search_items&params={"spec":{"itemsType":"avl_unit","propName":"sys_name","propValueMask":"Buick Skylark Convertible","sortType":"sys_name"},"force":1,"flags":8193,"from":0,"to":0}&sid=EID_OBTENIDO_TRAS_LOGGUEO``` 
 (Nota: propValueMask puede tener el valor de cualquier vehículo acotado en la API)
 
 ## Capturas de Pantalla
@@ -67,6 +67,7 @@ Acorde a documentación,
 
 La estructura es: 
 
+``` 
 ITire/
 ├── backend/
 │   ├── src/
@@ -93,6 +94,7 @@ ITire/
 │   └── ...
 ├── README.md
 └── .gitignore
+```
 
 - Inicia el backend con npm run start:dev
 - El servidor corre en http://localhost:3000
