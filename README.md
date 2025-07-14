@@ -5,7 +5,14 @@
 
 ## Descripción
 
-**Wialon Mileage** es una aplicación full-stack que permite consultar el kilometraje de vehículos (como el "Buick Skylark Convertible") a través de la API de Wialon. El backend, desarrollado en **NestJS**, autentica con la API de Wialon y expone endpoints para obtener el kilometraje. El frontend, construido con **Flutter**, es una interfaz móvil responsiva para iOS y Android, con un diseño oscuro, animaciones fluidas y manejo de estado con `provider`.
+**Wialon Mileage**, aplicación full-stack que permite consultar el kilometraje de vehículos (como el "Buick Skylark Convertible", y otros que oficialmente aparecen en la consulta oficial de la API de Wialon, se pueden seleccionar con el dropdown menu). El backend está desarrollado en **NestJS**, autentica con la API de Wialon y expone endpoints para obtener el kilometraje. El frontend, construido con **Flutter**, es una interfaz móvil responsiva para Android, con un diseño oscuro, animaciones fluidas y manejo de estado con `provider`.
+
+Se consideró el uso del token sin expiración, para generar eid, y por medio de éste elemento se hacen las consultas de kilometraje. Se pueden ver los endpoints en swagger mediante la ruta http://localhost:3000/api.
+
+Acorde a documentación, 
+- loggueo: https://hst-api.wialon.com/wialon/ajax.html?svc=token/login&params={"token": TOKEN}
+- consulta de kilometraje, mediante flag 8193. Ejemplo de ruta según documentación: https://hst-api.wialon.com/wialon/ajax.html?svc=core/search_items&params={"spec":{"itemsType":"avl_unit","propName":"sys_name","propValueMask":"Buick Skylark Convertible","sortType":"sys_name"},"force":1,"flags":8193,"from":0,"to":0}&sid=EID_OBTENIDO_TRAS_LOGGUEO
+(Nota: propValueMask puede tener el valor de cualquier vehículo acotado en la API)
 
 ## Capturas de Pantalla
 
