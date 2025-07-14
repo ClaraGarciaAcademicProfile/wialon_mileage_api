@@ -1,16 +1,9 @@
 # client
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Frontend (Flutter)**:
+  - Interfaz con tema oscuro, gradientes y tipografía Poppins.
+  - Dropdown para seleccionar el vehículo ("Buick Skylark Convertible", y otros reales comprobados con la API).
+  - Botón para consultar el kilometraje con animaciones usando `animate_do`.
+  - Indicador de carga y manejo de errores.
+  - Comparación del kilometraje actual con el anterior para mostrar mensajes como "Kilometraje inicial", "El kilometraje ha aumentado" o "El kilometraje se mantuvo constante".
+- **Arquitectura limpia**: Separación de preocupaciones con modelos, proveedores y servicios.
