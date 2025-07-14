@@ -1,0 +1,45 @@
+# Flutter
+**/android/**/gradle-wrapper.jar
+**/android/.gradle
+**/android/captures/
+**/android/gradlew
+**/android/gradlew.bat
+**/android/local.properties
+**/android/**/GeneratedPluginRegistrant.java
+**/ios/**/*.mode1v3
+**/ios/**/*.mode2v3
+**/ios/**/*.moved-aside
+**/ios/**/*.pbxuser
+**/ios/**/*.perspectivev3
+**/ios/**/*sync/
+**/ios/**/.sconsign.dblite
+**/ios/**/.tags*
+**/ios/**/.vagrant/
+**/ios/**/DerivedData/
+**/ios/**/Icon?
+**/ios/**/Pods/
+**/ios/**/.symlinks/
+
+# Node/Backend
+node_modules/
+dist/
+.env
+npm-debug.log
+
+# Android
+**/android/**/key.properties
+**/android/**/key.jks
+
+# IDE
+.vscode/
+.idea/
+*.iml
+*.swp
+.DS_Store
+
+# Build
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+pubspec.lock
