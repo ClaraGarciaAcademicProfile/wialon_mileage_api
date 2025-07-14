@@ -5,14 +5,14 @@
 
 ## Descripción
 
-**Wialon Mileage**, aplicación full-stack que permite consultar el kilometraje de vehículos (como el "Buick Skylark Convertible", y otros que oficialmente aparecen en la consulta oficial de la API de Wialon, se pueden seleccionar con el dropdown menu). El backend está desarrollado en **NestJS**, autentica con la API de Wialon y expone endpoints para obtener el kilometraje. El frontend, construido con **Flutter**, es una interfaz móvil responsiva para Android, con un diseño oscuro, animaciones fluidas y manejo de estado con `provider`.
+**Wialon Mileage**, aplicación práctica con la que puedes consultar el kilometraje de vehículos (como el "Buick Skylark Convertible", y otros que oficialmente aparecen en la consulta oficial de la API de Wialon, se pueden seleccionar con el dropdown menu). El backend está desarrollado en **NestJS**, autentica con la API de Wialon y expone endpoints para obtener el kilometraje. El frontend, construido con **Flutter**, es una interfaz responsiva para iOS/Android, con un diseño oscuro, animaciones fluidas y manejo de estados con `provider`.
 
 Se consideró el uso del token sin expiración, para generar eid, y por medio de éste elemento se hacen las consultas de kilometraje. Se pueden ver los endpoints en swagger mediante la ruta http://localhost:3000/api.
 
 Acorde a documentación, 
-- loggueo: ```https://hst-api.wialon.com/wialon/ajax.html?svc=token/login&params={"token": TOKEN}``` 
-- consulta de kilometraje, mediante flag 8193. Ejemplo de ruta según documentación: ``` https://hst-api.wialon.com/wialon/ajax.html?svc=core/search_items&params={"spec":{"itemsType":"avl_unit","propName":"sys_name","propValueMask":"Buick Skylark Convertible","sortType":"sys_name"},"force":1,"flags":8193,"from":0,"to":0}&sid=EID_OBTENIDO_TRAS_LOGGUEO``` 
-(Nota: propValueMask puede tener el valor de cualquier vehículo acotado en la API)
+- loggueo: POST ```https://hst-api.wialon.com/wialon/ajax.html?svc=token/login&params={"token": TOKEN}``` 
+- consulta de kilometraje, mediante flag 8193 (para obtener valor del campo "cnm"). Ejemplo de ruta según documentación: POST ``` https://hst-api.wialon.com/wialon/ajax.html?svc=core/search_items&params={"spec":{"itemsType":"avl_unit","propName":"sys_name","propValueMask":"Buick Skylark Convertible","sortType":"sys_name"},"force":1,"flags":8193,"from":0,"to":0}&sid=EID_OBTENIDO_TRAS_LOGGUEO``` 
+(Nota: propValueMask puede tener el valor de cualquier vehículo acotado en la API). En la aplicación, puedes elegir entre varios vehículos
 
 ## Capturas de Pantalla
 
@@ -22,12 +22,15 @@ Acorde a documentación,
 ### Documentación Swagger
 ![Swagger](screenshots/documentacion_swagger.jpeg)
 
+### Postman, consulta de kilometraje en ruta oficial
+
 ### Características Principales
 - **Backend (NestJS)**:
   - Autenticación con la API de Wialon mediante token (`POST /wialon/login`).
   - Consulta del kilometraje de un vehículo (`GET /wialon/mileage?vehicleName=...` en vehicleName puedes poner "Buick Skylark Convertible". Ejemplo: http://localhost:3000/wialon/mileage?vehicleName=Buick%20Skylark%20Convertible en postman, petición GET).
   - Documentación interactiva de la API en Swagger (`http://localhost:3000/api`).
   - Soporte CORS para permitir solicitudes desde el frontend.
+    
 - **Frontend (Flutter)**:
   - Interfaz con tema oscuro, gradientes y tipografía Poppins.
   - Dropdown para seleccionar el vehículo ("Buick Skylark Convertible", y otros reales comprobados con la API).
@@ -59,9 +62,7 @@ Acorde a documentación,
 - **Flutter SDK**: v3.29.2 con Dart 3.24.x (verifica con `flutter --version`).
 - **Git**: Para control de versiones (`git --version` para verificar).
 - **Emulador o dispositivo físico**: Android Studio con emulador Android o Xcode para iOS.
-- **Token de Wialon**: Proporcionado por el proveedor de servicios de Wialon, necesario para el archivo `.env`.
-- **Editor de código**: Visual Studio Code, IntelliJ IDEA, o similar.
-- **Conexión a internet**: Para instalar dependencias y comunicarse con la API de Wialon.
+- **Token de Wialon**: Necesario para el archivo `.env`.
 
 ## Detalles e instalación
 
