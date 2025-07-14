@@ -23,6 +23,7 @@ Acorde a documentación,
 ![Swagger](screenshots/documentacion_swagger.jpeg)
 
 ### Postman, consulta de kilometraje en ruta oficial
+![Postman](screenshots/postman_cnm.jpeg)
 
 ### Características Principales
 - **Backend (NestJS)**:
